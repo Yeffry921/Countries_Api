@@ -5,9 +5,20 @@ import '/index.css'
 
 const App = () => {
   const [theme, setTheme] = useState('light')
+  const [countries, setCountries] = useState([])
   const [filter, setFilter] = useState('')
   
   const regions = ["Africa", "Americas", "Asia", "Europe", "Oceania"]
+
+  useEffect(() => {
+    getAllCountries()
+  }, [])
+
+  const getAllCountries = async () => {
+    const res = await fetch('https://restcountries.com/v3.1/all')
+    const json = await res.json()
+    setCountries(json)
+  }
 
   const handleTheme = () => {
     const toggle = theme === 'light' ? 'dark' : 'light'
@@ -44,7 +55,7 @@ const App = () => {
           </label>
         </form>
 
-        <select value={filter} name="region" id="region" class="" onChange={handleSetFilter}>
+        <select value={filter} className="region__filter" onChange={handleSetFilter}>
           <option value="" hidden>Filter by Region</option>
           {regions.map((region) => {
             return (
@@ -53,6 +64,10 @@ const App = () => {
           })}
         </select>
       </div>
+
+      {countries.map((country) => {
+        return <p>{country.name.common}</p>
+      })}
     </div>
     
   )
