@@ -65,9 +65,11 @@ body, input, button {
 }
 
 /* Form input */
+.filter__container {
+  padding: var(--padding-layout);
+}
 
 .form__container {
-  padding: var(--padding-layout);
   margin-top: 1.2em;
 }
 
@@ -96,3 +98,22 @@ body, input, button {
   color: var(--text-color);
 }
 
+/* Filter  */
+
+.region__filter {
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;
+  padding-left: 1.5em;
+  padding-right: 5em;
+  background-color: var(--elements-color);
+  box-shadow: var(--box-shadow);
+  border: none;
+  margin: 2em 0;
+  /* padding-right: 2em; */
+  border-radius: 5px;
+  color: var(--text-color);
+}
+.region__filter option {
+  margin-top: .5em;
+  border: none;
+}
