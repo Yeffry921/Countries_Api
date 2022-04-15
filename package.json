@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/Yeffry921/Countries_Api#readme",
   "devDependencies": {
-    "parcel": "^2.4.1"
+    "parcel": "^2.4.1",
+    "prettier": "^2.6.2"
   },
   "dependencies": {
     "react": "^18.0.0",
