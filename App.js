@@ -75,26 +75,23 @@ const App = () => {
       </div>
         
       <div className="card__container">
-      {countryFilter.map((country) => {
-        return (
-          <div className='card'>
-            <div className="card__image-wrapper">
-              <img src={country.flags.png} alt="flag" />
-            </div>
-            <div className="card__detail-wrapper">
-              <h2>{country.name.common}</h2>
+        {countryFilter.map((country) => {
+          return (
+            <div className='card' key={country.cca3}>
+              <div className="card__image-wrapper">
+                <img src={country.flags.png} alt="flag" />
+              </div>
+              <div className="card__detail-wrapper">
+                <h2>{country.name.common}</h2>
 
-              <h4>Population: <span>{country.population}</span></h4>
-              <h3>Region: <span>{country.region}</span></h3>
-              <h3>Capital: <span>{country.capital}</span></h3>
+                <h5>Population: <span>{country.population}</span></h5>
+                <h5>Region: <span>{country.region}</span></h5>
+                <h5>Capital: <span>{country.capital}</span></h5>
+              </div>
             </div>
-          </div>
-          
-        )
-      })}
-    </div>
-      
-      
+          )
+        })}
+      </div>
     </div>
     
   )
