@@ -120,9 +120,9 @@ body, input, button {
 
 /* card container */
 .card__container {
-  padding: var(--padding-layout);
+  padding: 4em;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 3em;
 }
 
@@ -130,23 +130,23 @@ body, input, button {
   background-color: var(--elements-color);
   color: var(--text-color);
   box-shadow: var(--box-shadow);
-  border-radius: 5px;
 }
 
 .card__image-wrapper {
-  height: 200px;
-  width: 250px;
+  height: 150px;
+  width: 150px;
   min-width: 100%;
 }
 
 .card__image-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .card__detail-wrapper {
   padding: 1em 1.5em;
+  height: 150px;
 }
 .card__detail-wrapper h2 {
   font-size: 1.2rem;
