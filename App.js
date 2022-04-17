@@ -23,6 +23,22 @@ const App = () => {
     }
   }, [region, countries])
 
+  const findCountry = (e) => {
+    e.preventDefault()
+
+    const query = e.target.country.value
+    
+    const newCountries = countries.filter((country) => { 
+
+      const countryName = country.name.common.toLowerCase()
+
+      return countryName.includes(query)
+
+    })
+    
+    setCountryFilter(newCountries)
+  }
+
   const getAllCountries = async () => {
     const res = await fetch('https://restcountries.com/v3.1/all')
     const json = await res.json()
@@ -37,7 +53,7 @@ const App = () => {
   const handleSetRegion = (e) => {
     setRegion(e.target.value)
   }
-  console.log(countries)
+  
   return (
     <div className="app">
       <header className='header__container'>
@@ -53,7 +69,7 @@ const App = () => {
       </header>
 
       <div className="filter__container">
-        <form className='form__container'>
+        <form className='form__container' onSubmit={findCountry}>
           <label htmlFor="country">
             <input 
               type="text" 
