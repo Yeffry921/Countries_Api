@@ -131,6 +131,7 @@ body, input, button {
   color: var(--text-color);
   box-shadow: var(--box-shadow);
   border-radius: 5px;
+  list-style: none;
 }
 
 .card__image-wrapper {
