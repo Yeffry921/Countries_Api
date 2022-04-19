@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 
 const regions = ["Africa", "Americas", "Asia", "Europe", "Oceania"]
 
@@ -75,16 +76,18 @@ const Home = () => {
         {countryFilter.map((country) => {
           return (
             <li className='card' key={country.cca3}>
-              <div className="card__image-wrapper">
-                <img src={country.flags.png} alt="flag" />
-              </div>
-              <div className="card__detail-wrapper">
-                <h2>{country.name.common}</h2>
+              <Link to={`/country/${country.name.common}`}>
+                <div className="card__image-wrapper">
+                  <img src={country.flags.png} alt="flag" />
+                </div>
+                <div className="card__detail-wrapper">
+                  <h2>{country.name.common}</h2>
 
-                <h5>Population: <span>{country.population}</span></h5>
-                <h5>Region: <span>{country.region}</span></h5>
-                <h5>Capital: <span>{country.capital}</span></h5>
-              </div>
+                  <h5>Population: <span>{country.population}</span></h5>
+                  <h5>Region: <span>{country.region}</span></h5>
+                  <h5>Capital: <span>{country.capital}</span></h5>
+                </div>
+              </Link>
             </li>
           )
         })}
