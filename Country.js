@@ -11,6 +11,13 @@ const Country = () => {
     
   }, [])
 
+  const fetchBorderCountry = async(name) => {
+    const res = await fetch(`https://restcountries.com/v2/alpha/${name}`)
+    const json = await res.json()
+
+    setCountry([json])
+  } 
+
   const fetchCountry = async () => {
     const res = await fetch(`https://restcountries.com/v2/name/${name}`)
     const json = await res.json()
@@ -57,6 +64,13 @@ const Country = () => {
                 </h3>
               </div>
 
+              <div>
+                {borders.map((border) => {
+                  return (
+                    <div onClick={() => fetchBorderCountry(border)} key={border}>{border}</div>
+                  )
+                })}
+              </div>
             </div>
           </div>
           )
