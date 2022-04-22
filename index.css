@@ -174,7 +174,7 @@ body, input, button {
 .country__container .nav {
   margin: 2em 0; 
 }
-.country__container button {
+.country__container .nav-btn {
   border: none;
   background: none;
   box-shadow: var(--box-shadow);
@@ -228,4 +228,19 @@ body, input, button {
   margin: 1.5em 0;
 }
 
+.country__data-borders {
+  margin-top: 4em;
+}
+.country__data-borders h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
 
+.country__border-btn {
+  margin: 1em .75em 1.5em 0;
+  padding: .55em 2.5em;
+  background: none;
+  border: none;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+}
