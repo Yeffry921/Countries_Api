@@ -165,3 +165,67 @@ body, input, button {
   font-weight: 500;
   font-size: 1rem;
 }
+
+/* country  */
+
+.country__container {
+  padding: var(--padding-layout);
+}
+.country__container .nav {
+  margin: 2em 0; 
+}
+.country__container button {
+  border: none;
+  background: none;
+  box-shadow: var(--box-shadow);
+  padding: .25em 0;
+}
+.country__data {
+  color: var(--text-color);
+}
+.back-btn {
+  text-decoration: none;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  padding: 0 2em;
+}
+.back-btn span {
+  font-size: 1rem;
+}
+.back-btn svg{
+  width: 1em;
+  height: 2em;
+  margin-right: .5em;
+}
+
+.country__image img {
+  width: 100%;
+}
+
+.country__data {
+  font-size: .85rem;
+}
+
+.country__data h2{
+  margin: 1em 0;
+  font-size: 1.5rem
+}
+
+.country__data .text-dark{
+  font-weight: 600;
+}
+
+.country__data .text-light {
+  font-weight: 300;
+}
+
+.country__data-left {
+  margin-bottom: 4em;
+}
+
+.country__data-right {
+  margin: 1.5em 0;
+}
+
+
