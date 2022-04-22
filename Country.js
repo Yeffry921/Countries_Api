@@ -6,7 +6,7 @@ const Country = () => {
 
   const [country, setCountry] = useState([])
   const { name } = useParams()
-  
+
   useEffect(() => {
     fetchCountry()
     
@@ -30,7 +30,7 @@ const Country = () => {
     <section className="country__container">
       <div className="nav">
         <button className="nav-btn">
-          <Link to={"/"} className='back-btn'>
+          <Link to={"/"} className='nav-link'>
             <FaLongArrowAltLeft/>
             <span>Back</span> 
           </Link>
