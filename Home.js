@@ -37,7 +37,7 @@ const Home = () => {
   }
 
   const getAllCountries = async () => {
-    const res = await fetch('https://restcountries.com/v3.1/all')
+    const res = await fetch('https://restcountries.com/v2/all')
     const json = await res.json()
     setCountries(json)
   }
@@ -47,7 +47,7 @@ const Home = () => {
     setRegion(e.target.value)
   }
 
-
+  console.log(countries)
   return (
     <React.Fragment>
       <div className="filter__container">
@@ -75,13 +75,13 @@ const Home = () => {
       <ul className="card__container">
         {countryFilter.map((country) => {
           return (
-            <li className='card' key={country.cca3}>
-              <Link to={`/country/${country.name.common}`}>
+            <li className='card' key={country.alpha3Code}>
+              <Link to={`/country/${country.name}`}>
                 <div className="card__image-wrapper">
-                  <img src={country.flags.png} alt="flag" />
+                  <img src={country.flags.png} loading="lazy" alt="flag" />
                 </div>
                 <div className="card__detail-wrapper">
-                  <h2>{country.name.common}</h2>
+                  <h2>{country.name}</h2>
 
                   <h5>Population: <span>{country.population}</span></h5>
                   <h5>Region: <span>{country.region}</span></h5>
