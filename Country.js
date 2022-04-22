@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom"
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
+import { FaLongArrowAltLeft} from 'react-icons/fa'
 
 const Country = () => {
 
@@ -11,7 +12,7 @@ const Country = () => {
     
   }, [])
 
-  const fetchBorderCountry = async(name) => {
+  const fetchBorderCountry = async (name) => {
     const res = await fetch(`https://restcountries.com/v2/alpha/${name}`)
     const json = await res.json()
 
@@ -24,12 +25,20 @@ const Country = () => {
 
     setCountry(json)
   }
-
+  console.log(country)
   return (
-    <React.Fragment>
-      <nav>
-        <Link to={"/"} className='back-btn'>Back</Link>
-      </nav>
+    <section className="country__container">
+      <div className="nav">
+        <button>
+          <Link to={"/"} className='back-btn'>
+            <FaLongArrowAltLeft/>
+            <span>Back</span> 
+          </Link>
+        </button>
+        
+      </div>
+      
+
       {country.length === 1 ? (
         country.map((countryData) => {
           const { name, population, region, subregion, capital,
@@ -37,7 +46,7 @@ const Country = () => {
                   nativeName, borders } = countryData
          
           return (
-          <div className="country__container" key={numericCode}>
+          <div className="country__container-data" key={numericCode}>
             <div className="country__image">
               <img src={flags.png} alt="flag" />
             </div>
@@ -45,31 +54,33 @@ const Country = () => {
             <div className="country__data">
               <h2>{name}</h2>
 
-              <div>
-                <h3>Native name: {nativeName}</h3>
-
-                <h3>Population: {population}</h3>
-                <h3>Region: {region}</h3>
-                <h3>Sub Region: {subregion}</h3>
-                <h3>Capital: {capital}</h3>
+              <div className="country__data-left">
+                <h3 className="text-dark">Native name: <span className="text-light">{nativeName}</span></h3>
+                <h3 className="text-dark">Population: <span className="text-light">{population}</span></h3>
+                <h3 className="text-dark">Region: <span className="text-light">{region}</span></h3>
+                <h3 className="text-dark">Sub Region: <span className="text-light">{subregion}</span></h3>
+                <h3 className="text-dark">Capital: <span className="text-light">{capital}</span></h3>
               </div>
 
-              <div>
-                <h3>Top Level Domain: {topLevelDomain[0]}</h3>
-                <h3>Currencies: {currencies[0].name}</h3>
-                <h3>Languages:  
-                  {languages.map((language) => 
-                    <span key={language.iso639_1}> {language.name}, </span>)
+              <div className="country__data-right">
+                <h3 className="text-dark">Top Level Domain: <span className="text-light">{topLevelDomain[0]}</span></h3>
+                <h3 className="text-dark">Currencies: <span className="text-light">{currencies[0].name}</span></h3>
+                <h3 className="text-dark">Languages:  
+                  {languages.map((language, index) => 
+                    <span key={language.iso639_1} className="text-light"> {(index ? ', ' : '') + language.name} </span>)
                   }
                 </h3>
               </div>
 
               <div>
-                {borders.map((border) => {
+                {borders ? borders.map((border) => {
                   return (
-                    <div onClick={() => fetchBorderCountry(border)} key={border}>{border}</div>
+                    <div 
+                      onClick={() => fetchBorderCountry(border)} 
+                      key={border}>{border}
+                    </div>
                   )
-                })}
+                }): null}
               </div>
             </div>
           </div>
@@ -77,7 +88,7 @@ const Country = () => {
         })
       ) : null}
       
-     </React.Fragment>
+     </section>
   )
 }
 
