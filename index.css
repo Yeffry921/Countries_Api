@@ -128,12 +128,16 @@ body, input, button {
 
 .card {
   background-color: var(--elements-color);
-  color: var(--text-color);
+  
   box-shadow: var(--box-shadow);
   border-radius: 5px;
   list-style: none;
+  
 }
-
+.card a {
+  text-decoration: none;
+  color: var(--text-color);
+}
 .card__image-wrapper {
   height: 150px;
   width: 150px;
@@ -176,24 +180,24 @@ body, input, button {
 }
 .country__container .nav-btn {
   border: none;
-  background: none;
+  background: var(--elements-color);
   box-shadow: var(--box-shadow);
   padding: .25em 0;
 }
 .country__data {
   color: var(--text-color);
 }
-.back-btn {
+.nav-link {
   text-decoration: none;
   color: var(--text-color);
   display: flex;
   align-items: center;
   padding: 0 2em;
 }
-.back-btn span {
+.nav-link span {
   font-size: 1rem;
 }
-.back-btn svg{
+.nav-link svg{
   width: 1em;
   height: 2em;
   margin-right: .5em;
@@ -239,8 +243,9 @@ body, input, button {
 .country__border-btn {
   margin: 1em .75em 1.5em 0;
   padding: .55em 2.5em;
-  background: none;
+  background: var(--elements-color);
   border: none;
   box-shadow: var(--box-shadow);
   cursor: pointer;
+  color: var(--text-color);
 }
