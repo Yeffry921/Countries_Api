@@ -5,8 +5,8 @@ import { FaLongArrowAltLeft} from 'react-icons/fa'
 const Country = () => {
 
   const [country, setCountry] = useState([])
-
   const { name } = useParams()
+  
   useEffect(() => {
     fetchCountry()
     
@@ -29,7 +29,7 @@ const Country = () => {
   return (
     <section className="country__container">
       <div className="nav">
-        <button>
+        <button className="nav-btn">
           <Link to={"/"} className='back-btn'>
             <FaLongArrowAltLeft/>
             <span>Back</span> 
@@ -72,13 +72,18 @@ const Country = () => {
                 </h3>
               </div>
 
-              <div>
+              <div className="country__data-borders">
+
+                <h3>Border Countries:</h3>
                 {borders ? borders.map((border) => {
                   return (
-                    <div 
+                    <button
+                      className="country__border-btn" 
                       onClick={() => fetchBorderCountry(border)} 
-                      key={border}>{border}
-                    </div>
+                      key={border}
+                    >
+                    {border}
+                    </button>
                   )
                 }): null}
               </div>
