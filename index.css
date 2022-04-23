@@ -5,7 +5,7 @@
   --elements-color:hsl(0, 0%, 100%);
   --homepage-font-size: 14px;
   --detail-font-size: 16px;
-  --padding-layout:.25em 1em;
+  --padding-layout: .25em 1.5em;
   --box-shadow:rgba(0, 0, 0, 0.16) 0px 1px 4px;
   --search-input-icon: url(/images/icon-search-light.svg)
 }
@@ -128,7 +128,6 @@ body, input, button {
 
 .card {
   background-color: var(--elements-color);
-  
   box-shadow: var(--box-shadow);
   border-radius: 5px;
   list-style: none;
@@ -170,7 +169,7 @@ body, input, button {
   font-size: 1rem;
 }
 
-/* country  */
+/* country  data*/
 
 .country__container {
   padding: var(--padding-layout);
@@ -202,7 +201,9 @@ body, input, button {
   height: 2em;
   margin-right: .5em;
 }
-
+.country__image {
+  max-width: 600px;
+}
 .country__image img {
   width: 100%;
 }
@@ -216,6 +217,10 @@ body, input, button {
   font-size: 1.5rem
 }
 
+.country__data h3 {
+  margin: .65em 0;
+}
+
 .country__data .text-dark{
   font-weight: 600;
 }
@@ -226,10 +231,6 @@ body, input, button {
 
 .country__data-left {
   margin-bottom: 4em;
-}
-
-.country__data-right {
-  margin: 1.5em 0;
 }
 
 .country__data-borders {
@@ -248,4 +249,52 @@ body, input, button {
   box-shadow: var(--box-shadow);
   cursor: pointer;
   color: var(--text-color);
+}
+
+@media only screen and (min-width: 1024px) {
+  /* Header */ 
+  .header__container {
+    padding: .25em 2.5em;
+  }
+  /* Home Component */
+  .card__container {
+    padding: var(--padding-layout);
+  }
+
+  .filter__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .filter__container .form__container {
+    width: 35%;
+  }
+
+  /* Country Componenet */
+  .country__container {
+    
+    margin: 0 auto;
+    padding: .25em 2.5em;
+  }
+  .country__container-data {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4em;
+  }
+
+  .country__data-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    align-items: flex-start;
+  }
+
+  .country__image {
+    flex: 1;
+  }
+  .country__image img {
+    height: 450px;
+    max-width: 500px;
+  }
 }
