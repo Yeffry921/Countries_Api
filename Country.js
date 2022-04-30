@@ -76,11 +76,10 @@ const Country = () => {
 
               <div className="country__data-borders">
 
-                
+                <h3>Border Countries:</h3>
                 {borders ? borders.map((border) => {
                   return (
-                    <div>
-                      <h3>Border Countries:</h3>
+                    <div>  
                       <button
                         className="country__border-btn" 
                         onClick={() => fetchBorderCountry(border)} 
@@ -90,7 +89,7 @@ const Country = () => {
                       </button>
                     </div>
                   )
-                }): null}
+                }): <button className="country__borner-btn">No Borders</button>}
               </div>
             </div>
           </div>

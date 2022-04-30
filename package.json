@@ -2,10 +2,11 @@
   "name": "rest-countries-api-with-color-theme-switcher-master",
   "version": "1.0.0",
   "description": "![Design preview for the REST Countries API with color theme switcher coding challenge](./design/desktop-preview.jpg)",
-  "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/Yeffry921/Countries_Api/issues"
   },
-  "homepage": "https://github.com/Yeffry921/Countries_Api#readme",
+  "homepage": "http://Yeffry921.github.io/Countries_Api",
   "devDependencies": {
     "parcel": "^2.4.1",
     "prettier": "^2.6.2"

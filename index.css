@@ -289,7 +289,9 @@ body, input, button {
     gap: 1em;
     align-items: flex-start;
   }
-
+  .country__data {
+    max-width: 600px;
+  }
   .country__image {
     flex: 1;
   }
